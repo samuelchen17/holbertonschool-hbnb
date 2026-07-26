@@ -30,6 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const reviewForm = document.getElementById('review-form');
+
+  if (reviewForm) {
+    reviewForm.addEventListener('submit', submitReview);
+  }
+
   const priceFilter = document.getElementById('price-filter');
 
   if (priceFilter) {
@@ -175,6 +181,12 @@ function setupPriceFilter() {
   });
 }
 
+function getPlaceIdFromURL() {
+  const params = new URLSearchParams(window.location.search);
+
+  return params.get('id');
+}
+
 async function fetchPlaceDetails() {
   try {
     const token = getCookie('token');
@@ -185,9 +197,7 @@ async function fetchPlaceDetails() {
       headers.Authorization = `Bearer ${token}`;
     }
 
-    const params = new URLSearchParams(window.location.search);
-
-    const placeId = params.get('id');
+    const placeId = getPlaceIdFromURL();
 
     if (!placeId) {
       console.error('No place ID provided');
@@ -299,3 +309,48 @@ function showReviewForm() {
     }
   }
 }
+
+async function submitReview() {
+  event.preventDefault();
+  const token = getCookie('token');
+
+  const placeId = getPlaceIdFromURL();
+
+  if (!placeId) {
+    console.error('No place ID provided');
+    return;
+  }
+
+  const text = document.getElementById('review-text').value;
+
+  const rating = document.getElementById('review-rating').value;
+
+  const response = await fetch('/api/v1/reviews/', {
+    method: 'POST',
+
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+
+    body: JSON.stringify({
+      text: text,
+      rating: Number(rating),
+      place_id: placeId,
+    }),
+  });
+
+  if (response.ok) {
+    alert('Review submitted successfully!');
+
+    document.getElementById('review-form').reset();
+
+    window.location.reload();
+  } else {
+    const error = await response.json();
+
+    console.error(error);
+    alert(`Error: ${JSON.stringify(error)}`);
+  }
+}
+
