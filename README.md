@@ -55,7 +55,7 @@ The application will initialise the database and start the Flask server.
 Once running, access the website at:
 
 ```
-http://localhost:5000
+http://localhost:8080
 ```
 
 ---
