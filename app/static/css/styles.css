@@ -1,4 +1,4 @@
-@import url('place-card.css');
+@import url('cards.css');
 @import url('nav-bar.css');
 @import url('button.css');
 
@@ -104,10 +104,4 @@ h1 {
   text-align: center;
 }
 
-.login-card h2 {
-  margin-bottom: 20px;
-}
 
-.login-card div {
-  margin-bottom: 15px;
-}

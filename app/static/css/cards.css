@@ -1,9 +1,13 @@
-.place-card {
+.place-card,
+.place-review-card,
+.place-detail-card,
+.login-card,
+.review-card {
   margin: 20px;
+  padding: 10px;
   background: #fff;
-  border: 1px solid #d3d3d3;
-  border-radius: var(--radius);
-  padding: 50px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -32,41 +36,14 @@
   color: var(--base);
 }
 
-.place-review-card,
-.place-detail-card,
-.login-card,
-.review-card {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  background: #fff;
-  border: 1px solid #d3d3d3;
-  border-radius: var(--radius);
-  padding: 50px;
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-}
-
-.place-detail-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.place-detail-card {
-  width: 100%;
-}
-
 .place-detail-card p {
   margin-bottom: 15px;
 }
 
 .place-detail-card ul {
-  margin-top: 10px;
-}
-
-.review-card {
-  display: flex;
-  flex: column;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
 }
 
 .review-card {
@@ -87,3 +64,19 @@
   box-sizing: border-box;
 }
 
+.login-card h2 {
+  margin-bottom: 20px;
+}
+
+.login-card div {
+  margin-bottom: 15px;
+}
+
+#login-message h2,
+#review-form h2 {
+  margin-left: 20px;
+}
+
+.place-reviews h2 {
+  margin-left: 20px;
+}
