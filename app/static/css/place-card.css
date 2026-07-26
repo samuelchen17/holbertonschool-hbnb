@@ -4,7 +4,7 @@
   border: 1px solid #d3d3d3;
   border-radius: var(--radius);
   padding: 50px;
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
 }
 
 .place-card:hover {
@@ -30,4 +30,34 @@
   font-weight: 700;
   font-size: 1rem;
   color: var(--base);
+}
+
+.place-review-card,
+.place-detail-card {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background: #fff;
+  border: 1px solid #d3d3d3;
+  border-radius: var(--radius);
+  padding: 50px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.place-detail-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.place-detail-card {
+  width: 100%;
+}
+
+.place-detail-card p {
+  margin-bottom: 15px;
+}
+
+.place-detail-card ul {
+  margin-top: 10px;
 }

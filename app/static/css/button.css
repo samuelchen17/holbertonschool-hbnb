@@ -1,0 +1,14 @@
+.details-button {
+  display: block;
+  text-align: center;
+  background: var(--base);
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: var(--radius);
+  font-weight: 700;
+}
+
+.details-button:hover {
+  background: var(--hoverBase);
+}

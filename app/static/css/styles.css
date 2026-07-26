@@ -1,10 +1,18 @@
 @import url('place-card.css');
 @import url('nav-bar.css');
+@import url('button.css');
 
 :root {
   --base: #1877f2;
   --hoverBase: #2559c8;
   --radius: 12px;
+}
+
+.page-layout {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 * {
@@ -35,7 +43,6 @@ main {
   padding: 2rem;
 }
 
-
 footer {
   background: #333;
   color: white;
@@ -50,27 +57,17 @@ nav a {
 }
 
 h1 {
-  margin-bottom: 20px;
   font-size: 2.2rem;
 }
 
-.review-card {
-  margin: 20px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-
-  /* display:flex; */
-  /* justify-content: center; */
-}
-
-.places-header {
+.index-places-header {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
 }
 
 .index-place-list {
@@ -94,17 +91,15 @@ h1 {
   }
 }
 
-.details-button {
-  display: block;
-  text-align: center;
-  background: var(--base);
-  color: white;
-  text-decoration: none;
-  padding: 12px;
-  border-radius: var(--radius);
-  font-weight: 700;
+.place-reviews ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.details-button:hover {
-  background: var(--hoverBase);
+.place-detail-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }

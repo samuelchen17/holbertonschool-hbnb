@@ -214,32 +214,45 @@ function displayPlaceDetails(place) {
   const container = document.getElementById('place-details');
 
   container.innerHTML = `
+
+    <section class='place-detail-information'>
     <h1>${place.title}</h1>
 
-    <p>${place.description}</p>
+<section class="place-detail-card">
 
-    <h3>Price per night:</h3>
-    <p>
-      $${place.price}
-    </p>
+  <p>
+    <strong>Host:</strong> 
+    ${place.owner.first_name} ${place.owner.last_name}
+  </p>
 
-    <h3>Location:</h3>
-    <p>  
-      ${place.latitude}, ${place.longitude}
-    </p>
+  <p>
+    <strong>Price per night:</strong> 
+    $${place.price}
+  </p>
 
-    <h3>Amenities:</h3>
+  <p>
+    <strong>Description:</strong> 
+    ${place.description}
+  </p>
+
+  <div>
+    <strong>Amenities:</strong>
     <ul>
       ${place.amenities
         .map(
           (amenity) => `
-          <li>${amenity.name}</li>
-        `,
+            <li>${amenity.name}</li>
+          `,
         )
         .join('')}
     </ul>
+  </div>
 
-    <h3>Reviews</h3>
+</section>
+       </section>
+
+    <section class="place-reviews">
+    <h2>Reviews</h2>
 
     <ul>
       ${
@@ -247,16 +260,18 @@ function displayPlaceDetails(place) {
           ? place.reviews
               .map(
                 (review) => `
-              <li>
+              <li class='place-review-card'>
+                <h3>first name last name:</h3>
                 <p>${review.text}</p>
                 <p>Rating: ${review.rating}/5</p>
               </li>
             `,
               )
               .join('')
-          : '<li>No reviews yet</li>'
+          : '<li class="place-review-card">No reviews yet</li>'
       }
     </ul>
+    </section>
   `;
 }
 
@@ -276,7 +291,6 @@ function showReviewForm() {
     if (loginMessage) {
       loginMessage.style.display = 'none';
     }
-
   } else {
     reviewForm.style.display = 'none';
 
