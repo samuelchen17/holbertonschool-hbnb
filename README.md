@@ -91,6 +91,12 @@ Import the collection into Postman and run all requests under:
 
 These requests should be run first to populate the database with the required initial data.
 
+### Creating Place Listings
+
+Before creating a place listing, ensure that all required amenities have already been created. Place listings can only reference existing amenities.
+
+Additionally, you must authenticate as an owner before creating a place. The logged-in owner account will be associated with any listings created through the API.
+
 ---
 
 ## Creating Test Data
