@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block title %} List of Places {% endblock %} {%
+block content %}
+<section class="places-header">
+  <h1>Available Places</h1>
+
+  <section id="filter">
+    <label for="price-filter">Max Price:</label>
+    <select id="price-filter"></select>
+  </section>
+</section>
+
+<section id="places-list" class="index-place-list"></section>
+{% endblock %}

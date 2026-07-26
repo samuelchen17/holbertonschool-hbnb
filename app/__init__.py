@@ -14,8 +14,11 @@ from api.v1.auth import api as auth_ns
 from api.v1.places import api as places_ns
 from api.v1.reviews import api as reviews_ns
 from api.v1.users import api as users_ns
+
 SEED_ADMIN_ID = "36c9050e-ddd3-4c3b-9731-9f487208bbc1"
 SEED_SQL_PATH = Path(__file__).with_name("seed.sql")
+
+from web.routes import web
 
 
 def seed_database():
@@ -39,7 +42,6 @@ def seed_database():
             connection.execute(text(statement))
 
 
-
 def create_app(config_class=config.DevelopmentConfig):
     app = Flask(__name__)
     app.config.from_object(config_class)
@@ -54,13 +56,22 @@ def create_app(config_class=config.DevelopmentConfig):
         db.create_all()
         seed_database()
 
-    api = Api(app, version='1.0', title='HBnB API', description='HBnB Application API', doc='/api/v1/')
+    api = Api(
+        app,
+        version="1.0",
+        title="HBnB API",
+        description="HBnB Application API",
+        doc="/api/v1/",
+        prefix='/api/v1/',
+    )
     register_error_handlers(api)
 
-    api.add_namespace(users_ns, path='/api/v1/users')
-    api.add_namespace(auth_ns, path='/api/v1/auth')
-    api.add_namespace(amenities_ns, path='/api/v1/amenities')
-    api.add_namespace(places_ns, path='/api/v1/places')
-    api.add_namespace(reviews_ns, path='/api/v1/reviews')
+    api.add_namespace(users_ns, path="users")
+    api.add_namespace(auth_ns, path="auth")
+    api.add_namespace(amenities_ns, path="amenities")
+    api.add_namespace(places_ns, path="places")
+    api.add_namespace(reviews_ns, path="reviews")
+
+    app.register_blueprint(web)
 
     return app

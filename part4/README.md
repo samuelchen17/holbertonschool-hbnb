@@ -1,1 +1,1 @@
-# HBNB Frontend
+# Part 4 is integrated into app

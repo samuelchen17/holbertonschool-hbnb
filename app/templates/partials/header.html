@@ -1,0 +1,17 @@
+<header>
+  <nav class="navbar">
+    <a href="{{ url_for('web.index') }}">
+      <img src="../static/images/logo.png" alt="hbnb-logo" class="logo" />
+    </a>
+    <a href="{{ url_for('web.index') }}" id="index-link" class="index-button"
+      >Home</a
+    >
+    <!-- implement link -->
+    <a href="{{ url_for('web.login') }}" id="login-button" class="login-button"
+      >Login</a
+    >
+    <a href="#" id="logout-button" class="login-button" style="display: none">
+      Logout
+    </a>
+  </nav>
+</header>

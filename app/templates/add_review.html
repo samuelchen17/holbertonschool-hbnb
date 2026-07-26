@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block title %} Add Review {% endblock %} {% block
+content %}
+<!-- Add something to idfentify the place you're reviewing -->
+<form id="review-form">
+  <h2>Add a Review???</h2>
+  <label for="review">Your Review:</label>
+  <textarea id="review" name="review" required></textarea>
+  <label for="rating">Rating:</label>
+  <select id="rating" name="rating" required>
+    <!-- Options for rating -->
+  </select>
+  <button type="submit">Submit Review</button>
+</form>
+{% endblock %}
