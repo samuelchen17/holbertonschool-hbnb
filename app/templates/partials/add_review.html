@@ -1,0 +1,25 @@
+<div id="login-message">
+  <h2>Add a Review</h2>
+  <p class="review-card">Please login to leave a review.</p>
+</div>
+
+<form id="review-form" style="display: none">
+  <h2>Add a Review</h2>
+
+  <div class="review-card">
+    <label for="review-text">Your Review:</label>
+    <textarea id="review-text" required></textarea>
+
+    <label for="review-rating">Rating:</label>
+    <select id="review-rating" required>
+      <option value="">Select a rating</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+
+    <button type="submit" class="login-button">Submit Review</button>
+  </div>
+</form>

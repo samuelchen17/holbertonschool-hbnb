@@ -103,3 +103,11 @@ h1 {
   align-items: center;
   text-align: center;
 }
+
+.login-card h2 {
+  margin-bottom: 20px;
+}
+
+.login-card div {
+  margin-bottom: 15px;
+}

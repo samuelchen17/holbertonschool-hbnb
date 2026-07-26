@@ -33,7 +33,9 @@
 }
 
 .place-review-card,
-.place-detail-card {
+.place-detail-card,
+.login-card,
+.review-card {
   margin-top: 30px;
   margin-bottom: 30px;
   background: #fff;
@@ -61,3 +63,27 @@
 .place-detail-card ul {
   margin-top: 10px;
 }
+
+.review-card {
+  display: flex;
+  flex: column;
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.review-card label {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+#review-text {
+  width: 100%;
+  min-height: 150px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+

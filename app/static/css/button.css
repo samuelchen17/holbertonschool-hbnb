@@ -9,6 +9,21 @@
   font-weight: 700;
 }
 
-.details-button:hover {
+.login-button {
+  display: block;
+  text-align: center;
+  background: var(--base);
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  padding: 10px 30px;
+  border: none;
+}
+
+.details-button:hover,
+.login-button:hover {
   background: var(--hoverBase);
 }
+
